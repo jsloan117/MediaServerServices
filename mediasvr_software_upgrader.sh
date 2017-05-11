@@ -1,6 +1,5 @@
 #!/bin/bash
 # Used to upgrade SickRage/CouchPotato/SABnzbd Centos 7+
-# Use the '-a' switch for automated/cron updates.
 # Version: 1.5
 
 #set -xv # debugging
