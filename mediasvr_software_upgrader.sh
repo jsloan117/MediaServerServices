@@ -1,8 +1,7 @@
 #!/bin/bash
 # Used to upgrade SickRage/CouchPotato/SABnzbd Centos 7+
-# Upgrading SABnabd can be semi questionable at times, when in doubt check online for the new version and if needed update the reflected info below. Use the '-a' switch for automated/cron updates.
-# Version: 1.4
-# git clone -b master https://github.com/sabnzbd/sabnzbd.git
+# Use the '-a' switch for automated/cron updates.
+# Version: 1.5
 
 #set -xv # debugging
 
