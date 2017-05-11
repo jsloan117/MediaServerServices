@@ -18,7 +18,7 @@ backup_prefix='_old'
 check_directory_exist () {
 x=0
 
-if [[ $prog = sickrage ]]; then
+if [[ $prog = sickbeard ]]; then
 
   dir="$sr_path$backup_prefix"
 
