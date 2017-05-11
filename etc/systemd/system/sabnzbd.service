@@ -1,0 +1,15 @@
+[Unit]
+Description=SABnzbd Daemon
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/sysconfig/sabnzbd
+User=transmission
+Group=transmission
+Type=forking
+ExecStart=/usr/bin/python /data/sabnzbd/SABnzbd.py $DAEMON_ARGS
+PIDFile=/run/mediaservices/sabnzbd.pid
+GuessMainPID=no
+
+[Install]
+WantedBy=multi-user.target
