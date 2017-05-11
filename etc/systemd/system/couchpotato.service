@@ -1,0 +1,15 @@
+[Unit]
+Description=CouchPotato Daemon
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/sysconfig/couchpotato
+User=transmission
+Group=transmission
+Type=forking
+ExecStart=/usr/bin/python /data/couchpotato/CouchPotato.py $DAEMON_ARGS
+PIDFile=/run/mediaservices/couchpotato.pid
+GuessMainPID=no
+
+[Install]
+WantedBy=multi-user.target
