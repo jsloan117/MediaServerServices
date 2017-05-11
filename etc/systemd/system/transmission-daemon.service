@@ -1,0 +1,13 @@
+[Unit]
+Description=Transmission BitTorrent Daemon
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/sysconfig/transmission-daemon
+User=transmission
+Type=notify
+ExecStart=/usr/bin/transmission-daemon -f $DAEMON_ARGS
+ExecReload=/bin/kill -s HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
