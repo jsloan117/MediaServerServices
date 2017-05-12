@@ -53,7 +53,7 @@ fi
 }
 
 chk_sickrage () {
-local prog=sickrage
+local prog=sickbeard
 local sr_upgrade=$(git --git-dir=$sr_path/.git status -u no | grep -q behind; echo $?)
 
 if [[ $sr_upgrade = 0 ]]; then
