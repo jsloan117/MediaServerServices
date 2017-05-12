@@ -1,8 +1,6 @@
 #!/bin/bash
-# Used to upgrade SickRage/CouchPotato/SABnzbd Centos 7+
-# Version: 1.5
-
-#set -xv # debugging
+# used to upgrade SickRage/CouchPotato/SABnzbd Centos 7+
+# version: 1.5
 
 cp_path='/data/couchpotato'
 cp_base="$(dirname $cp_path)"
