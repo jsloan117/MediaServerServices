@@ -1,0 +1,1 @@
+DAEMON_ARGS="--data_dir /data/couchpotato --config_file /data/couchpotato/settings.conf --daemon --pid_file /run/mediaservices/couchpotato.pid"
