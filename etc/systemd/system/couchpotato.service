@@ -10,6 +10,8 @@ Type=forking
 ExecStart=/usr/bin/python /data/couchpotato/CouchPotato.py $DAEMON_ARGS
 PIDFile=/run/mediaservices/couchpotato.pid
 GuessMainPID=no
+Restart=on-failure
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
