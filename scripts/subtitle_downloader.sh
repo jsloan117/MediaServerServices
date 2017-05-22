@@ -1,5 +1,6 @@
 #!/bin/bash
 # Used to download subtitles
+# Requires subliminal install => pip install subliminal
 
 video_dir="$1"
 
