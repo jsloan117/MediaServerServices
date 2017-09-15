@@ -3,37 +3,65 @@
 
 set -aeu
 
-MY_SERVICES='sickbeard transmission-daemon'
-MY_PUB_IP='FILL THIS IN'
-#MY_VPN_IP=''
+MY_SERVICES='FILL IN'
+MY_PUB_IP='FILL IN'
+VPN_SERVICE='openvpn@client'
+VPN_NIC='FILL IN'
 MY_IP=$(curl -s ifconfig.co)
 
-if [[ "$MY_IP" = "$MY_PUB_IP" ]]; then
+check_vpn_service () { # check if vpn is running
+systemctl restart "$VPN_SERVICE"
+sleep 10 # give vpn time to initialize
+check_vpn_nic
+}
 
-    for SERVICES in $MY_SERVICES; do
+check_vpn_nic () { # check if vpn's nic exists
+if [[ $(ifconfig "$VPN_NIC" > /dev/null 2>&1 ; echo $?) = '0' ]]; then
 
-        SERVICE_STATE=$(systemctl status "$SERVICES" > /dev/null 2>&1; echo $?) # returns 3 if stopped
+    MY_IP=$(curl -s ifconfig.co)
+    if [[ "$MY_IP" != "$MY_PUB_IP" ]]; then
 
-        if [[ "$SERVICE_STATE" != '3'  ]]; then
+        services_start
 
-            systemctl stop "$SERVICES" > /dev/null 2>&1
+    fi
+fi
+}
 
-        fi
+services_start () {
+for SERVICES in $MY_SERVICES; do
 
-    done
+    SERVICE_STATE=$(systemctl status "$SERVICES" > /dev/null 2>&1; echo $?) # returns 0 if started
+
+    if [[ "$SERVICE_STATE" != '0' ]]; then
+
+        systemctl start "$SERVICES" > /dev/null 2>&1
+
+    fi
+
+done
+}
+
+services_stop () {
+for SERVICES in $MY_SERVICES; do
+
+    SERVICE_STATE=$(systemctl status "$SERVICES" > /dev/null 2>&1; echo $?) # returns 3 if stopped
+
+    if [[ "$SERVICE_STATE" != '3' ]]; then
+
+        systemctl stop "$SERVICES" > /dev/null 2>&1
+
+    fi
+
+done
+}
+
+if [[ "$MY_IP" = "$MY_PUB_IP" || $(systemctl status "$VPN_SERVICE" > /dev/null 2>&1; echo $?) = '3' ]]; then
+
+    services_stop # ensure services will not be running without vpn
+    check_vpn_service
 
 else
 
-    for SERVICES in $MY_SERVICES; do
-
-        SERVICE_STATE=$(systemctl status "$SERVICES" > /dev/null 2>&1; echo $?) # returns 0 if started
-
-        if [[ "$SERVICE_STATE" != '0'  ]]; then
-
-            systemctl start "$SERVICES" > /dev/null 2>&1
-
-        fi
-
-    done
+    services_start # ensure services are started if vpn is up and public IP does not match vpn IP
 
 fi
