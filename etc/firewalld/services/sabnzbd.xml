@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Sabnzbd</short>
+  <description>Sabnzbd -- Usenet NZB Downloader</description>
+  <port protocol="tcp" port="7000"/>
+</service>
