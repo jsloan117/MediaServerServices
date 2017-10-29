@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Plex Home Theater</short>
+  <description>Controlling Plex Home Theater via Plex Companion</description>
+  <port protocol="tcp" port="3005"/>
+</service>
