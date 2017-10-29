@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Transmission Daemon SSL port -->
+<service>
+  <short>Nginx</short>
+  <description>Nginx SSL port for transmission daemon</description>
+  <port protocol="tcp" port="8000"/>
+</service>
