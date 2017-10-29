@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Plex Bonjour/Avahi ND</short>
+  <description>Plex older Bonjour/Avahi network discovery</description>
+  <port protocol="udp" port="5353"/>
+</service>
