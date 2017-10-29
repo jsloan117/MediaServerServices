@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Plex-Roku</short>
+  <description>Controlling Plex for Roku via Plex Companion</description>
+  <port protocol="tcp" port="8324"/>
+</service>
