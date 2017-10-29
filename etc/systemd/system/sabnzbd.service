@@ -12,6 +12,7 @@ PIDFile=/run/mediaservices/sabnzbd.pid
 GuessMainPID=no
 Restart=on-failure
 RestartSec=5
+Nice=-20
 
 [Install]
 WantedBy=multi-user.target
