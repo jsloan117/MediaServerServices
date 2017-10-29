@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Sickbeard</short>
+  <description>Sickbeard -- TV Show Snatcher</description>
+  <port protocol="tcp" port="4443"/>
+</service>
