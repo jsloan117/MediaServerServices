@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Plex DLNA Server</short>
+  <description>Access to the Plex DLNA Server</description>
+  <port protocol="udp" port="1900"/>
+  <port protocol="tcp" port="32469"/>
+</service>
