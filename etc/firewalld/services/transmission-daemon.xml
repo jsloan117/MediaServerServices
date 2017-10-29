@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Transmission Daemon</short>
+  <description>Transmission Daemon is a lightweight BitTorrent Daemon</description>
+  <port protocol="tcp" port="9090"/>
+</service>
