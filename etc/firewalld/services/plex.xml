@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>PMS</short>
+  <description>Plex Media Server, one stop shop media center solution</description>
+  <port protocol="tcp" port="32400"/>
+</service>
