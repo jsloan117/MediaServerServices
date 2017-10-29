@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Couchpotato</short>
+  <description>Couchpotato -- Movie Snatcher</description>
+  <port protocol="tcp" port="5050"/>
+</service>
