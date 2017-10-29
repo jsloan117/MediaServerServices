@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Plex GDM ND</short>
+  <description>Plex GDM network discovery</description>
+  <port protocol="udp" port="32410"/>
+  <port protocol="udp" port="32412-32414"/>
+</service>
