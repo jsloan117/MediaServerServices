@@ -1,1 +1,1 @@
-DAEMON_ARGS="-f /data/sabnzbd/config.ini -s *:7000 -b 1 -d --https 7001 --pidfile /run/mediaservices/sabnzbd.pid"
+DAEMON_ARGS="-f /data/sabnzbd/config.ini -s 0.0.0.0:7000 -b 1 -d --https 7001 --pidfile /run/mediaservices/sabnzbd.pid"
