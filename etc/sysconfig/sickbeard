@@ -1,1 +1,1 @@
-DAEMON_ARGS="--datadir /data/sickbeard --config /data/sickbeard/config.ini -d -p 4443 --pidfile /run/mediaservices/sickbeard.pid"
+DAEMON_ARGS="--datadir /data/sickbeard --config /data/sickbeard/config.ini -q -d -p 4443 --pidfile /run/mediaservices/sickbeard.pid"
