@@ -2,5 +2,5 @@
 <service>
   <short>Transmission Daemon</short>
   <description>Transmission Daemon is a lightweight BitTorrent Daemon</description>
-  <port protocol="tcp" port="9090"/>
+  <port protocol="tcp" port="9091"/>
 </service>
