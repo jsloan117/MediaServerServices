@@ -1,0 +1,18 @@
+[Unit]
+Description=Plexpy Daemon
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/sysconfig/plexpy
+User=transmission
+Group=transmission
+Type=forking
+ExecStart=/usr/bin/python /data/plexpy/PlexPy.py $DAEMON_ARGS
+PIDFile=/run/mediaservices/plexpy.pid
+GuessMainPID=no
+Restart=on-failure
+RestartSec=5
+Nice=-20
+
+[Install]
+WantedBy=multi-user.target
