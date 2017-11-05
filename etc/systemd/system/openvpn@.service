@@ -1,0 +1,11 @@
+[Unit]
+Description=OpenVPN Robust And Highly Flexible Tunneling Application On %I
+After=network.target
+
+[Service]
+Type=notify
+PrivateTmp=true
+ExecStart=/usr/sbin/openvpn --cd /etc/openvpn/client --config %i.conf --log-append /var/log/openvpn/%i.log
+
+[Install]
+WantedBy=multi-user.target
