@@ -1,5 +1,5 @@
 #!/bin/bash
-# Media Services Kill Switch aka Internet Kill Switch
+# Media Services Kill Switch aka Internet Kill Switch (Be sure to add this to your crontab to ensure OpenVPN stays running)
 
 set -aeu
 
@@ -7,7 +7,7 @@ MY_SERVICES='FILL IN'
 MY_PUB_IP='FILL IN'
 VPN_SERVICE='openvpn@client'
 VPN_NIC='FILL IN'
-MY_IP=$(curl -s ifconfig.co)
+MY_IP=$(curl -s v4.ifconfig.co)
 
 check_vpn_service () { # check if vpn is running
 systemctl restart "$VPN_SERVICE"
@@ -18,7 +18,7 @@ check_vpn_nic
 check_vpn_nic () { # check if vpn's nic exists
 if [[ $(ifconfig "$VPN_NIC" > /dev/null 2>&1 ; echo $?) = '0' ]]; then
 
-    MY_IP=$(curl -s ifconfig.co)
+    MY_IP=$(curl -s v4.ifconfig.co)
     if [[ "$MY_IP" != "$MY_PUB_IP" ]]; then
 
         services_start
