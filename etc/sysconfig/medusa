@@ -1,1 +1,0 @@
-DAEMON_ARGS="--datadir /data/Medusa --config /data/Medusa/config.ini -q -d -p 4446 --pidfile /run/mediaservices/medusa.pid"

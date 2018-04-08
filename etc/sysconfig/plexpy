@@ -1,1 +1,0 @@
-DAEMON_ARGS="--datadir /data/Plexpy --config /data/Plexpy/config.ini -q -d -p 4445 --nolaunch --nofork --pidfile /run/mediaservices/plexpy.pid"
