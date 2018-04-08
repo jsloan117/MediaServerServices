@@ -1,0 +1,18 @@
+[Unit]
+Description=Tautulli Daemon
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/sysconfig/tautulli
+User=transmission
+Group=transmission
+Type=forking
+ExecStart=/usr/bin/python /data/tautulli/Tautulli.py $DAEMON_ARGS
+PIDFile=/run/mediaservices/tautulli.pid
+GuessMainPID=no
+Restart=on-failure
+RestartSec=5
+Nice=-20
+
+[Install]
+WantedBy=multi-user.target

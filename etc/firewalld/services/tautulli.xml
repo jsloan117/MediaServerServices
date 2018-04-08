@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Tautulli</short>
+  <description>Tautulli Plex Media Server monitoring</description>
+  <port protocol="tcp" port="4445"/>
+</service>
