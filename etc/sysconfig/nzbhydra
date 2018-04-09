@@ -1,0 +1,1 @@
+DAEMON_ARGS="--config /data/nzbhydra/config.cfg --database /data/nzbhydra/nzbhydra.db --logfile /data/nzbhydra/nzbhydra.log -p 5075 --nobrowser -D -q --pidfile /data/nzbhydra/nzbhydra.pid"

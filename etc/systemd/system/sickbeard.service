@@ -1,6 +1,6 @@
 [Unit]
 Description=SickBeard Daemon
-After=network.target
+After=network.target openvpn@client.service
 
 [Service]
 EnvironmentFile=/etc/sysconfig/sickbeard
@@ -10,7 +10,7 @@ Type=forking
 ExecStart=/usr/bin/python /data/sickbeard/SickBeard.py $DAEMON_ARGS
 PIDFile=/run/mediaservices/sickbeard.pid
 GuessMainPID=no
-Restart=on-failure
+Restart=always
 RestartSec=5
 Nice=-20
 

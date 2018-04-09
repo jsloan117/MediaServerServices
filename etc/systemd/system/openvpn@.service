@@ -6,6 +6,8 @@ After=network.target
 Type=notify
 PrivateTmp=true
 ExecStart=/usr/sbin/openvpn --cd /etc/openvpn/client --config %i.conf --log-append /var/log/openvpn/%i.log
+Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target

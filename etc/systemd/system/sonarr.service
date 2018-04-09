@@ -1,0 +1,17 @@
+[Unit]
+Description=Sonarr Daemon
+After=syslog.target network.target openvpn@client.service
+
+[Service]
+User=transmission
+Group=transmission
+
+Type=simple
+ExecStart=/usr/bin/mono /data/sonarr/bin/NzbDrone.exe --data=/data/sonarr/userdata --nobrowser
+TimeoutStopSec=20
+KillMode=process
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

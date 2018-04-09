@@ -1,0 +1,18 @@
+[Unit]
+Description=Jackett Daemon
+After=syslog.target network.target openvpn@client.service
+
+[Service]
+User=transmission
+Group=transmission
+Environment=XDG_CONFIG_HOME=/data/jackett/userdata
+
+Type=simple
+ExecStart=/usr/bin/mono --debug /data/jackett/bin/JackettConsole.exe --NoRestart
+TimeoutStopSec=20
+KillMode=process
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

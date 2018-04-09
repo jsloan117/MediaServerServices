@@ -1,0 +1,17 @@
+[Unit]
+Description=Radarr Daemon
+After=syslog.target network.target openvpn@client.service
+
+[Service]
+User=transmission
+Group=transmission
+
+Type=simple
+ExecStart=/usr/bin/mono --debug /data/radarr/bin/Radarr.exe --data=/data/radarr/userdata --nobrowser
+TimeoutStopSec=20
+KillMode=process
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

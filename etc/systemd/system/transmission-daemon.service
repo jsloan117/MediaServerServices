@@ -1,6 +1,6 @@
 [Unit]
 Description=Transmission BitTorrent Daemon
-After=network.target
+After=network.target openvpn@client.service
 
 [Service]
 EnvironmentFile=/etc/sysconfig/transmission-daemon
@@ -8,7 +8,7 @@ User=transmission
 Type=notify
 ExecStart=/usr/bin/transmission-daemon -f $DAEMON_ARGS
 ExecReload=/bin/kill -s HUP $MAINPID
-Restart=on-failure
+Restart=always
 RestartSec=5
 Nice=-20
 
