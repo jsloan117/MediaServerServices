@@ -159,7 +159,7 @@ mv SABnzbd-$sabver $sb_path
 rm -f SABnzbd-$sabver-src.tar.gz
 cp -p $dir/config.ini $sb_path
 cp -Rp $dir/admin $sb_path
-[[ -d "$dir/backupnzbs" ]] && cp -Rp $dir/backupnzbs $sb_path
+[[ -d "$dir/backupnzbs" ]] && mv $dir/backupnzbs $sb_path
 find $sb_path -type f -exec chmod 640 {} \;
 find $sb_path -type d -exec chmod 750 {} \;
 chmod 750 $sb_path/SABnzbd.py
