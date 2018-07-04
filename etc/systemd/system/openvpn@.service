@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=notify
 PrivateTmp=true
-ExecStart=/usr/sbin/openvpn --cd /etc/openvpn/client --config %i.conf --log-append /var/log/openvpn/%i.log
+ExecStart=/usr/sbin/openvpn --cd /etc/openvpn/client --config %i.conf --writepid /run/openvpn-client/openvpn-%i.pid --log-append /var/log/openvpn/%i.log
 Restart=always
 RestartSec=5
 
