@@ -1,6 +1,6 @@
-check process OpenVPN with pidfile /run/openvpn-client/openvpn-client.pid
-    start program = "/bin/systemctl start openvpn@client.service"
-    stop program  = "/bin/systemctl stop openvpn@client.service"
+check process Sabnzbd with pidfile /run/mediaservices/sabnzbd.pid
+    start program = "/bin/systemctl start sabnzbd.service"
+    stop program  = "/bin/systemctl stop sabnzbd.service"
     if cpu > 25% for 2 cycles then alert
     if cpu > 50% for 5 cycles then alert
     if totalmem > 1000.0 MB for 5 cycles then alert
@@ -8,3 +8,4 @@ check process OpenVPN with pidfile /run/openvpn-client/openvpn-client.pid
     if disk write > 500 kb/s for 10 cycles then alert
     if 3 restarts within 5 cycles then alert
     group mediaservices
+    depends on OpenVPN

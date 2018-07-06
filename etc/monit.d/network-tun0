@@ -1,0 +1,4 @@
+check network tun0 with interface tun0
+       start program = "/bin/systemctl start openvpn@client.service"
+       stop program = "/bin/systemctl stop openvpn@client.service"
+       if failed link then restart
