@@ -1,0 +1,9 @@
+/var/log/transmission/transmission-daemon.log {
+    missingok
+    notifempty
+    size 10M
+    create 0640 transmission transmission
+    postrotate
+        /bin/systemctl reload transmission-daemon.service > /dev/null 2>&1 || :
+    endscript
+}
