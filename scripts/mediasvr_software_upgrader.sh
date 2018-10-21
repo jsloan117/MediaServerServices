@@ -123,8 +123,8 @@ upgrade_sickrage () {
 cd "$sr_base" || exit
 systemctl stop sickbeard
 mv $sr_path $dir
-git clone -q https://github.com/SickRage/SickRage.git
-mv SickRage $sr_path
+git clone -q https://github.com/SickChill/SickChill.git
+mv SickChill $sr_path
 cp -p $dir/{failed.db,sickbeard.db,config.ini} $sr_path
 cp -Rp $dir/cache $sr_path
 find $sr_path -type f -exec chmod 640 {} \;
