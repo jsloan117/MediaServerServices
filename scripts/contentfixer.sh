@@ -10,10 +10,10 @@ chown -R plex:media $mediadir
 chown -R transmission:media $torrentsdir
 
 # Removes junk type files from media folders
-find $mediadir/{movies,tvshows} -type f \( -iname "*.html" -o -iname "*.smi" -o -iname "*.srt.random-*" -o -iname "*.dbm" -o -iname "*.website" -o -iname "*.url" -o -iname "*.txt" -o -iname "*.nfo*" -o -iname "*.ignore" -o -iname "*.db" -o -iname "*.nzb" -o -iname "*.part" -o -iname "*.added" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.par2" -o -iname "*.part" -o -iname "*.srr" -o -iname "*.sfv" -o -iname "*.rar" -o -iname "*.r[0-9][0-9]" -o -iname "*.ico" \) -exec rm -f {} \;
+find $mediadir/{movies,tvshows} -type f \( -iname "*.html" -o -iname "*.smi" -o -iname "*.srt.random-*" -o -iname "*.dbm" -o -iname "*.website" -o -iname "*.url" -o -iname "*.txt" -o -iname "*.nfo*" -o -iname "*.ignore" -o -iname "*.db" -o -iname "*.nzb" -o -iname "*.part" -o -iname "*.added" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.par2" -o -iname "*.part" -o -iname "*.srr" -o -iname "*.sfv" -o -iname "*.rar" -o -iname "*.r[0-9][0-9]" -o -iname "*.ico" -o -iname "*.exe" \) -exec rm -f {} \;
 
 # Removes junk type files from the download folder.
-find $torrentsdir/downloaded -type f \( -iname "*.html" -o -iname "*.smi" -o -iname "*.srt.random-*" -o -iname "*.dbm" -o -iname "*.website" -o -iname "*.url" -o -iname "*.txt" -o -iname "*.nfo*" -o -iname "*.ignore" -o -iname "*.db" -o -iname "*.nzb" -o -iname "*.part" -o -iname "*.added" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.par2" -o -iname "*.part" -o -iname "*.srr" -o -iname "*.sfv" -o -iname "*.rar" -o -iname "*.r[0-9][0-9]" -o -iname "*.ico" \) -exec rm -f {} \;
+find $torrentsdir/downloaded -type f \( -iname "*.html" -o -iname "*.smi" -o -iname "*.srt.random-*" -o -iname "*.dbm" -o -iname "*.website" -o -iname "*.url" -o -iname "*.txt" -o -iname "*.nfo*" -o -iname "*.ignore" -o -iname "*.db" -o -iname "*.nzb" -o -iname "*.part" -o -iname "*.added" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.par2" -o -iname "*.part" -o -iname "*.srr" -o -iname "*.sfv" -o -iname "*.rar" -o -iname "*.r[0-9][0-9]" -o -iname "*.ico" -o -iname "*.exe" \) -exec rm -f {} \;
 
 # Removes more junk type files/folders from downloaded folder
 find $torrentsdir/downloaded \( -iname "*sample*" -o -iname "ETRG.*" \) -exec rm -rf {} \;
