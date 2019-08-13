@@ -17,6 +17,7 @@ find $torrentsdir/downloaded -type f \( -iname "*.html" -o -iname "*.smi" -o -in
 
 # Removes more junk type files/folders from downloaded folder
 find $torrentsdir/downloaded \( -iname "*sample*" -o -iname "ETRG.*" \) -exec rm -rf {} \;
+find $torrentsdir/downloading -iname "*.parts" -exec rm -f {} \;
 
 # Removes empty files/folders from downloaded folder
 find $torrentsdir/downloaded/* -empty -exec rm -rf {} \; > /dev/null 2>&1
