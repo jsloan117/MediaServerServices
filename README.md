@@ -2,7 +2,7 @@
 
 SickRage, CouchPotato, SABnzbd, Transmission-Daemon scripts/confs for CentOS 7+
 
-Be sure update all related IP(es)/Port(s) according to your setup. Once completed may need to run the below commands.
+Be sure to update all related IP(es)/Port(s) according to your setup. Once completed may need to run the below commands.
 
 ```bash
 systemctl daemon-reload

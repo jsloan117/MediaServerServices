@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Jenkins</short>
+  <description>Jenkins -- an open source automation server which enables developers around the world to reliably build, test, and deploy their software</description>
+  <port protocol="tcp" port="4040"/>
+</service>
